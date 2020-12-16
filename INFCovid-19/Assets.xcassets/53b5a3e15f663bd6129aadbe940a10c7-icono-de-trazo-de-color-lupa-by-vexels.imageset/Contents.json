@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "53b5a3e15f663bd6129aadbe940a10c7-icono-de-trazo-de-color-lupa-by-vexels.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
