@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0ABB560D258AE5CB00542466 /* CovidManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABB560C258AE5CB00542466 /* CovidManager.swift */; };
+		0ABB5612258AF3B000542466 /* CovidData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABB5611258AF3B000542466 /* CovidData.swift */; };
+		0ABB5617258B02DB00542466 /* CovidModelo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABB5616258B02DB00542466 /* CovidModelo.swift */; };
 		0B9D245B2589DAC400AAF58E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9D245A2589DAC400AAF58E /* AppDelegate.swift */; };
 		0B9D245D2589DAC400AAF58E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9D245C2589DAC400AAF58E /* SceneDelegate.swift */; };
 		0B9D245F2589DAC400AAF58E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9D245E2589DAC400AAF58E /* ViewController.swift */; };
@@ -36,6 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0ABB560C258AE5CB00542466 /* CovidManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovidManager.swift; sourceTree = "<group>"; };
+		0ABB5611258AF3B000542466 /* CovidData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovidData.swift; sourceTree = "<group>"; };
+		0ABB5616258B02DB00542466 /* CovidModelo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovidModelo.swift; sourceTree = "<group>"; };
 		0B9D24572589DAC400AAF58E /* INFCovid-19.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "INFCovid-19.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B9D245A2589DAC400AAF58E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0B9D245C2589DAC400AAF58E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +115,9 @@
 				0B9D24682589DAC800AAF58E /* LaunchScreen.storyboard */,
 				0B9D246B2589DAC800AAF58E /* Info.plist */,
 				0B9D24632589DAC400AAF58E /* INFCovid_19.xcdatamodeld */,
+				0ABB560C258AE5CB00542466 /* CovidManager.swift */,
+				0ABB5611258AF3B000542466 /* CovidData.swift */,
+				0ABB5616258B02DB00542466 /* CovidModelo.swift */,
 			);
 			path = "INFCovid-19";
 			sourceTree = "<group>";
@@ -262,7 +271,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B9D245F2589DAC400AAF58E /* ViewController.swift in Sources */,
+				0ABB5617258B02DB00542466 /* CovidModelo.swift in Sources */,
+				0ABB560D258AE5CB00542466 /* CovidManager.swift in Sources */,
 				0B9D245B2589DAC400AAF58E /* AppDelegate.swift in Sources */,
+				0ABB5612258AF3B000542466 /* CovidData.swift in Sources */,
 				0B9D245D2589DAC400AAF58E /* SceneDelegate.swift in Sources */,
 				0B9D24652589DAC400AAF58E /* INFCovid_19.xcdatamodeld in Sources */,
 			);
