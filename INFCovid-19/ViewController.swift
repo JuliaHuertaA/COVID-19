@@ -57,7 +57,7 @@ class ViewController: UIViewController, UITextFieldDelegate, CovidManagerDelegat
         super.viewDidLoad()
         buscarTextField.delegate = self
 
-        self.banderaImageView.image = UIImage(named: "1f60a.png")
+        self.banderaImageView.image = UIImage(named: "celula-coronavirus-dos-cientificos-laboratorio_1639-12580.jpg")
         self.paisLabel.text = "¡Bienvenido!"
         self.casosNumeroLabel.text = "más recientes"
         self.numeroMuertesLabel.text = "en diferentes"
