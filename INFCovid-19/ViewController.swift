@@ -11,12 +11,12 @@ class ViewController: UIViewController, UITextFieldDelegate, CovidManagerDelegat
     func huboError(cualError: Error) {
         if cualError.localizedDescription == "The data couldn’t be read because it is missing."{
             DispatchQueue.main.async {
-                self.paisLabel.text = "No hay datos o no esta bien escrito"
-                self.banderaImageView.image = UIImage(named: "")
-                self.casosNumeroLabel.text = ""
+                self.paisLabel.text = "No hay datos o"
+                self.banderaImageView.image = UIImage(named: "error-803716__340.png")
+                self.casosNumeroLabel.text = "escrito el país"
                 self.numeroMuertesLabel.text = ""
                 self.numeroRecuperadosLabel.text = ""
-                self.casosConfirmadosLabel.text = ""
+                self.casosConfirmadosLabel.text = "no esta bien"
                 self.muertesLabel.text = ""
                 self.recuperadosLabel.text = ""
             }
@@ -57,14 +57,14 @@ class ViewController: UIViewController, UITextFieldDelegate, CovidManagerDelegat
         super.viewDidLoad()
         buscarTextField.delegate = self
 
-        self.banderaImageView.image = UIImage(named: "")
-        self.paisLabel.text = ""
-        self.casosNumeroLabel.text = ""
-        self.numeroMuertesLabel.text = ""
+        self.banderaImageView.image = UIImage(named: "1f60a.png")
+        self.paisLabel.text = "¡Bienvenido!"
+        self.casosNumeroLabel.text = "más recientes"
+        self.numeroMuertesLabel.text = "en diferentes"
         self.numeroRecuperadosLabel.text = ""
-        self.casosConfirmadosLabel.text = ""
-        self.muertesLabel.text = ""
-        self.recuperadosLabel.text = ""
+        self.casosConfirmadosLabel.text = "Encuentra los datos"
+        self.muertesLabel.text = "del covid"
+        self.recuperadosLabel.text = "paises"
         let tapGesture = UITapGestureRecognizer(target: self, action:#selector(tapGestureHandler))
         view.addGestureRecognizer(tapGesture)
         covidManager.delegado = self
