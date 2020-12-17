@@ -8,13 +8,31 @@
 import UIKit
 
 class ViewController: UIViewController, UITextFieldDelegate, CovidManagerDelegate {
+    func huboError(cualError: Error) {
+        if cualError.localizedDescription == "The data couldn’t be read because it is missing."{
+            DispatchQueue.main.async {
+                self.paisLabel.text = "No hay datos o no esta bien escrito"
+                self.banderaImageView.image = UIImage(named: "")
+                self.casosNumeroLabel.text = ""
+                self.numeroMuertesLabel.text = ""
+                self.numeroRecuperadosLabel.text = ""
+                self.casosConfirmadosLabel.text = ""
+                self.muertesLabel.text = ""
+                self.recuperadosLabel.text = ""
+            }
+  
+        }
+    }
+    
     func actualizarInfo(covid: CovidModelo) {
         print(covid.bandera)
         DispatchQueue.main.async {
             let urlImagen:NSURL? = NSURL(string:covid.bandera)
             let data:NSData? = NSData(contentsOf : urlImagen! as URL)
             let image = UIImage(data : data! as Data)
-
+            self.casosConfirmadosLabel.text = "Casos confirmados"
+            self.muertesLabel.text = "Muertes"
+            self.recuperadosLabel.text = "Recuperados"
             self.banderaImageView.image = image
             self.paisLabel.text = covid.nombrePais
             self.casosNumeroLabel.text = covid.casosCadena
@@ -37,17 +55,26 @@ class ViewController: UIViewController, UITextFieldDelegate, CovidManagerDelegat
     @IBOutlet weak var numeroRecuperadosLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        buscarTextField.delegate = self
+
+        self.banderaImageView.image = UIImage(named: "")
+        self.paisLabel.text = ""
+        self.casosNumeroLabel.text = ""
+        self.numeroMuertesLabel.text = ""
+        self.numeroRecuperadosLabel.text = ""
+        self.casosConfirmadosLabel.text = ""
+        self.muertesLabel.text = ""
+        self.recuperadosLabel.text = ""
         let tapGesture = UITapGestureRecognizer(target: self, action:#selector(tapGestureHandler))
         view.addGestureRecognizer(tapGesture)
         covidManager.delegado = self
-        buscarTextField.delegate = self
     }
     @objc func tapGestureHandler() {
             buscarTextField.endEditing(true)
       }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        paisLabel.text = buscarTextField.text
+        //paisLabel.text = buscarTextField.text
         return true
     }
     
@@ -61,8 +88,20 @@ class ViewController: UIViewController, UITextFieldDelegate, CovidManagerDelegat
     }
     
     @IBAction func buscarButton(_ sender: UIButton) {
-        paisLabel.text = buscarTextField.text
-        covidManager.fetchCovid(nombrePais: buscarTextField.text!)
+        //paisLabel.text = buscarTextField.text
+        if buscarTextField.text != ""{
+            covidManager.fetchCovid(nombrePais: buscarTextField.text!)
+        }else{
+            paisLabel.text = "Ingresa un país"
+            banderaImageView.image = UIImage(named:"328ff48684eef92268d8e22b173925ac-hombre-de-dibujos-animados-pensando-by-vexels.png")
+            casosNumeroLabel.text = ""
+            numeroMuertesLabel.text = ""
+            numeroRecuperadosLabel.text = ""
+            casosConfirmadosLabel.text = ""
+            muertesLabel.text = ""
+            recuperadosLabel.text = ""
+        }
+       
     }
     
 

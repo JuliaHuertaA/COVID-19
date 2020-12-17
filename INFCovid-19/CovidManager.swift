@@ -8,7 +8,9 @@
 import Foundation
 protocol CovidManagerDelegate {
     func actualizarInfo(covid:CovidModelo)
+    func huboError(cualError:Error)
 }
+
 struct CovidManager {
     
     var delegado: CovidManagerDelegate?
@@ -23,6 +25,7 @@ struct CovidManager {
             let session = URLSession(configuration: .default)
             let tarea = session.dataTask(with: url){(data,respuesta,error) in
                 if error != nil{
+                    self.delegado?.huboError(cualError: error!)
                     print(error!)
                     return
                 }
@@ -52,6 +55,7 @@ struct CovidManager {
             
          
         }catch{
+            self.delegado?.huboError(cualError: error)
             print(error)
             return nil
         }
